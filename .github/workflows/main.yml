@@ -16,14 +16,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-
-<<<<<<< HEAD
+          
       - name: Install dependencies
         run: npm install
 
       - name: Run Test Case
         run: node test.js
-=======
-      - name: Run Test Case
-        run: node test.js
->>>>>>> 0eae8c591b5dc402d169826a94a3cf0854ab86d3
+
