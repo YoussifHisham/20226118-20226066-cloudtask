@@ -1,10 +1,7 @@
-
 name: CI Pipeline
 
-on:
+on: 
   push:
-    branches: [ main, develop ]
-  pull_request:
     branches: [ main ]
 
 jobs:
@@ -13,22 +10,15 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'
+          node-version: '18'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Run Test Cases
+      - name: Run Test Case
         run: node test.js
-
-      - name: Upload test results
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-results
-          path: test-results/        
